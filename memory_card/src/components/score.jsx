@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import '../styles/header.css'
 
 export default function Score(props){
 
@@ -14,7 +15,7 @@ export default function Score(props){
     
     return(
         <>
-        <p>Score :{updateScore()}</p>
+        <p className='score'>Score: {updateScore()}</p>
         </>
     )
 }

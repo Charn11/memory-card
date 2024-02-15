@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import '../styles/header.css'
 
 export default function Bestscore(props){
 
@@ -14,7 +15,7 @@ export default function Bestscore(props){
     
     return(
         <>
-        <p>Best Score :{updateBestScore()}</p>
+        <p className='bestScore'>Best Score: {updateBestScore()}</p>
         </>
     )
 }

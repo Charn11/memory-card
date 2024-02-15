@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import Start from './components/start'
 import Header from '/src/components/header'
 import './App.css'
+import './styles/main.css'
 import Card from './components/card';
 import Score from './components/score';
 import Bestscore from './components/best-score';
@@ -25,7 +26,7 @@ function App() {
     async function loadImg(){
       console.log("mount");
       try{
-        let response = await fetch('http://api.giphy.com/v1/gifs/search?q=city&api_key=l0ufBRdrCdJLe00XVyuQ4B0PQPunkLxZ&limit=3', {signal});
+        let response = await fetch('http://api.giphy.com/v1/gifs/search?q=vaporwave&api_key=l0ufBRdrCdJLe00XVyuQ4B0PQPunkLxZ&limit=3', {signal});
         let imgData = await response.json();
         for(let i=0; i<imgData.data.length;i++){
           console.log(imgData.data[i].id);
@@ -49,12 +50,16 @@ function App() {
 
   return (
     <>
-      <Header />
+      <div className='head-container'>
+      <Header/>
       <Score score={score}/>
       <Bestscore bestScore={bestScore} setBestScore={setBestScore}></Bestscore>
+      </div>
+      <div className='main-container'>
       <Start setGameStart={setGameStart}/>
       <Card imgs={imgs} setImages={setImages} score={score} setScore={setScore} 
       bestScore={bestScore} setBestScore={setBestScore}/>
+      </div>
     </>
   )
 }
