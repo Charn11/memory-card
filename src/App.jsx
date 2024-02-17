@@ -26,7 +26,7 @@ function App() {
     async function loadImg(){
       console.log("mount");
       try{
-        let response = await fetch('http//api.giphy.com/v1/gifs/search?q=vaporwave&api_key=l0ufBRdrCdJLe00XVyuQ4B0PQPunkLxZ&limit=10', {signal});
+        let response = await fetch('https://api.giphy.com/v1/gifs/search?api_key=l0ufBRdrCdJLe00XVyuQ4B0PQPunkLxZ&q=vaporwave&limit=10&offset=0&rating=g&lang=en&bundle=messaging_non_clips', {signal});
         let imgData = await response.json();
         for(let i=0; i<imgData.data.length;i++){
           console.log(imgData.data[i].id);
