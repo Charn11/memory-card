@@ -22,3 +22,32 @@
     background-color: yellow;
     cursor: pointer;
 }
+
+.card{
+    display: grid;
+    height: 100%;
+    width: 100%;
+}
+
+.card>img{
+    object-fit: cover;
+    border: 5px solid pink;
+    border-radius: 15px;
+    height: 100%;
+    width: 100%;
+}
+
+.card>img:hover{
+    cursor: pointer;
+    animation: hover-img 3s infinite linear;
+}
+
+@keyframes hover-img {
+    from{
+        transform: rotateY(0deg); 
+    }
+  
+    to{
+        transform: rotateY(-360deg);
+    }
+}
